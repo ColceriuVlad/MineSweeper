@@ -1,0 +1,488 @@
+.container {
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.container.activated {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+* {
+    font-family: "Russo One";
+    font-size: 15px;
+}
+
+
+
+.scorecontainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    min-width: 80%;
+
+}
+
+.minefield {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    height: 40vh;
+    width: 20vw;
+    border: 1px solid black;
+    border-radius: 5px;
+
+
+}
+
+.menu {
+    width: 40%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+    border-radius: 10px;
+    position: absolute;
+}
+
+.reload {
+    width: 40%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+    border-radius: 10px;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    align-items: center;
+}
+
+.reload.triggered {
+    visibility: visible;
+    animation: appear 1s forwards;
+
+}
+
+.reload .buttoncontainer {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.reload .contain {
+    width: 80%;
+    height: 20%;
+    background-image: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);
+    border-radius: 10px;
+    margin-bottom: 3vh;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+
+
+}
+
+.reload .button {
+    font-size: 18px;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #1590e2;
+    width: 40%;
+    cursor: pointer;
+    margin-bottom: 3vh
+}
+
+.reload .button:hover {
+    background-color: #15b9e2;
+}
+
+.scores {
+    width: 40%;
+    height: auto;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+    border-radius: 10px;
+    position: absolute;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0
+}
+
+.alerts {
+    width: 40%;
+    height: 40%;
+    background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+}
+
+.alerts.triggered {
+    animation: appear 1s forwards;
+    visibility: visible;
+}
+
+.alerts .title {
+    font-size: 40px;
+    padding-top: 5%;
+    width: 90%;
+}
+
+.alerts .contains {
+    background-image: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);
+    height: auto;
+    min-height: 40%;
+    width: 90%;
+    margin-top: 5%;
+    margin-bottom: 7%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.alerts .contains p {
+    font-size: 15px;
+    width: 80%;
+}
+
+.alerts .contains input {
+    padding: 1vh;
+    width: 77%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+.alerts .contains .buttons {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.alerts .contains .buttons button {
+    font-size: 15px;
+    height: 65%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #1590e2;
+    width: 25%;
+    cursor: pointer;
+}
+
+
+.alerts .contains .buttons button:hover {
+    background-color: #15b9e2;
+}
+
+.scores.activated {
+    visibility: visible;
+    animation: appear 1s forwards;
+}
+
+.scores .title {
+    margin-top: 5vh;
+    font-size: 40px;
+    width: 80%;
+    display: flex;
+    justify-content: start;
+
+}
+
+
+
+.scores .scorecontainer {
+    font-size: 20px;
+    width: 80%;
+    word-wrap: break-word;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.scorecontainer {
+    flex: 4;
+}
+
+.back {
+    flex: 1;
+    background-image: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);
+    width: 80%;
+    margin: auto;
+    margin-bottom: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 40px;
+    cursor: pointer;
+
+}
+
+
+.back:hover {
+    background-image: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 30%);
+}
+
+.menu>div {
+    margin: 5vh auto;
+    height: 20%;
+    width: 80%;
+    background-image: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);
+    font-size: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.menu.activated {
+    animation: disappear 1s forwards;
+}
+
+.menu>div:hover {
+    background-image: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 30%);
+}
+
+.minefield button {
+    background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+    background-blend-mode: screen;
+}
+
+.minefield>div {
+    display: flex;
+    flex-direction: row;
+    height: calc(100%/10);
+    width: 100%
+}
+
+.minefield button {
+    width: calc(100%/8);
+    font-size: 0px;
+    transition: 400ms;
+    transition-property: fontSize;
+
+}
+
+
+.minefield button.activated {
+    font-size: 15px;
+    background-color: red;
+}
+
+body {
+    display: flex;
+    height: 95vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+
+.panel {
+    height: 10vh;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+    background-blend-mode: screen;
+
+}
+
+.score {
+    width: 20%;
+    height: 40%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.subpanel {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.subpanel .title {
+    margin-top: -0.5em;
+    height: 30%;
+    width: 40%;
+    margin-bottom: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scoredisplay {
+    display: flex;
+    flex-direction: column;
+    background-color: green;
+}
+
+.score {
+    min-height: 35%;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #DC143C;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+
+
+
+.dscore {
+    min-height: 35%;
+    height: auto;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dscore p {
+    color: red;
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0.4em 0;
+    margin-left: 2vw;
+    color: #d7b7e2
+}
+
+.dscore div {
+    color: red;
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 2vw;
+    color: #d7b7e2
+}
+
+
+
+@media screen and (max-width:1100px) {
+    .scores {
+        width: 100%;
+
+    }
+
+    .back {
+        font-size: 25px;
+    }
+
+    .reload {
+        width: 100%;
+    }
+
+    .reload .contain {
+        font-size: 20px;
+    }
+
+    .alerts .contains p {
+        font-size: 12px;
+    }
+
+    .alerts .contains input {
+        font-size: 12px;
+    }
+
+    .alerts .contains .buttons button {
+        font-size: 12px;
+    }
+
+    .alerts {
+        width: 100%;
+    }
+
+    .scores .title {
+        font-size: 23px;
+    }
+
+    .minefield {
+        width: 100%;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    .dscore p {
+        font-size: 15px;
+    }
+
+    .dscore div {
+        font-size: 12px;
+    }
+}
+
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateX(-100%)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+@keyframes minesappear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    from {
+        opacity: 1;
+        transform: translateX(0)
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-100%)
+    }
+}
